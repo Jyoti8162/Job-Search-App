@@ -36,7 +36,7 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
         this.selectedJob = job;
       },
       error: (e: HttpErrorResponse) => {
-        console.error('Error loading job details:', e);
+        //console.error('Error loading job details:', e);
       },
     });
   }
