@@ -1,0 +1,32 @@
+<div *ngIf="jobs" class="container">
+    <h2 class="text-center mb-4"></h2>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card mb-3" *ngFor="let job of jobs">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <!-- Image -->
+              <div class="col-md-2">
+                <img *ngIf="job.companyLogo" src="{{ job.companyLogo }}" alt="{{ job.companyName }} Logo" class="img-fluid rounded-circle w-100 h-100">
+              </div>
+              <!-- Title -->
+              <div class="col-md-6">
+                <a class="card-title fs-4" [routerLink]="['/job/job-details', job.id]">{{ job.title }}</a>
+                <!-- Reference and Company Name -->
+                <p class="company-info"><b>Company:</b> {{ job.companyName }} | <b>Reference:</b> {{ job.reference }}</p>
+              </div>
+              <!-- Favorite Star Icon -->
+              <div class="col-md-4 text-end">
+                <div class="btn btn-lg" (click)="toggleFavorite(job)">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" [ngClass]="{ 'favorite': job.isFavorite }">
+                    <path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" />
+                  </svg>                 
+                </div>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

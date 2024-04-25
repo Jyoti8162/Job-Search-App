@@ -1,0 +1,30 @@
+<!-- app.component.html -->
+<h2 class="text-center">Find Your Job</h2>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="row">
+        <!-- Jobs Button -->
+        <div
+          class="col btn btn-lg"
+          [class.btn-secondary]="currentView === 'jobs'"
+          [class.btn-light]="currentView !== 'jobs'"
+          (click)="navigateTo('jobs')"
+        >
+          JOBS
+        </div>
+        <!-- favorite Button -->
+        <div
+          class="col btn btn-lg"
+          [class.btn-secondary]="currentView === 'favorite-jobs'"
+          [class.btn-light]="currentView !== 'favorite-jobs'"
+          (click)="navigateTo('favorite-jobs')"
+        >
+          FAVORITES
+        </div>
+      </div>
+      <!-- Render content -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

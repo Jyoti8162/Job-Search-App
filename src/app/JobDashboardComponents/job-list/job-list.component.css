@@ -1,0 +1,13 @@
+
+  
+  .favorite-icon.filled {
+    fill: #f0ad4e; /* Orange example for filled star */
+  }
+  
+  .favorite-icon.unfilled {
+    fill: #000000; /* Black example for unfilled star */
+  }
+  /* Add this in your component's CSS file */
+.favorite path {
+  fill: #f0ad4e; /* Change the fill color to orange when job is favorite */
+}

@@ -1,0 +1,39 @@
+<div *ngIf="jobs && jobs.length > 0" class="container">
+    <h2 class="text-center mb-4"></h2>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card mb-3" *ngFor="let job of jobs">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <!-- Company Logo -->
+              <div class="col-md-2">
+                <img
+                  *ngIf="job.companyLogo"
+                  src="{{ job.companyLogo }}"
+                  alt="{{ job.companyName }} Logo"
+                  class="img-fluid rounded-circle w-100 h-100"
+                />
+              </div>
+              <!-- Title -->
+              <div class="col-md-6">
+                <a
+                  class="card-title fs-4"
+                  [routerLink]="['/job/job-details', job.id]"
+                  >{{ job.title }}</a
+                >
+                <!-- Reference and Company Name -->
+                <p class="company-info">
+                  <b>Company:</b> {{ job.companyName }} | <b>Reference:</b>
+                  {{ job.reference }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- No job avilable Message -->
+  <div *ngIf="!jobs || jobs.length === 0" class="container text-center mt-4">
+    <p>No Favorite Jobs Available</p>
+  </div>
